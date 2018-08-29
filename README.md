@@ -4,7 +4,16 @@ This is a simple time machine docker image using samba and avahi. It's mostly ba
 ## How to use this image?
 
 ### Simple way
-'docker run -d --net=host --name=timemachine willtho/samba-timemachine'
+```
+docker run -d --net=host \
+            -v /opt/timemachine:/timemachine/ \
+            -e TM_USER=timemachine \
+            -e TM_PW=timemachine \
+            --name=timemachine willtho/samba-timemachine
+```
+
+### docker-compose
+Use the provided `docker-compose.yml` file and create the conainer with `docker-compose up -d`
 
 ### Environment Variables
 | Varibable | Function                | Default.    |
