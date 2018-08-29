@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 #defaults
 TM_USER="${TM_USER:-timemachine}"

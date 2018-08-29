@@ -15,7 +15,6 @@ COPY setup.sh template_quota /tmp/
 COPY smb.conf /etc/samba/smb.conf
 COPY avahia.service /etc/avahi/services/timemachine.service
 COPY supervisord.conf /etc/supervisord.conf
-#RUN /tmp/setup.sh
 
 VOLUME ["/timemachine"]
 ENTRYPOINT ["/tmp/setup.sh"]
