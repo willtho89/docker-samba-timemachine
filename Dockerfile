@@ -19,4 +19,6 @@ COPY supervisord.conf /etc/supervisord.conf
 
 VOLUME ["/timemachine"]
 ENTRYPOINT ["/tmp/setup.sh"]
+HEALTHCHECK --interval=5m --timeout=3s \
+  CMD (avahi-daemon -asd && smbstatus -b >/dev/null) || exit 1
 CMD ["supervisord", "--nodaemon", "--configuration", "/etc/supervisord.conf"]
