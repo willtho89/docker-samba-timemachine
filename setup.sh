@@ -17,7 +17,7 @@ fi
 
 
 chown -R ${TM_USER} "/timemachine"
-
+TM_SIZE=$(($TM_SIZE * 1000000))
 sed "s#REPLACE_TM_SIZE#${TM_SIZE}#" /tmp/template_quota > /timemachine/.com.apple.TimeMachine.quota.plist
 
 # run CMD
