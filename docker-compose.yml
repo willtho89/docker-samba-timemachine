@@ -7,7 +7,7 @@ services:
     environment:
       TM_USER: timemachine
       TM_PW: timemachine
-      VOLUME_SIZE_LIMIT: 512000
+      TM_SIZE: 512000
     volumes:
       - './timemachine:/timemachine'
       - '/etc/localtime:/etc/localtime:ro'
